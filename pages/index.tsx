@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [valor , setValor] = useState('ola');
   return (
     <div className={styles.container}>
       <Head>
@@ -12,8 +14,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <input value={valor} onChange={e => setValor(e.target.value)}   placeholder='nome'/>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        {valor} to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
